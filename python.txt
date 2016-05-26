@@ -1,0 +1,125 @@
+Python
+object’s identity is it’s address in memory and is stored by an object’s reference
+comparing strings- “is” is faster than ==
+Comparison by “is” is comparison by identity and comparison by == is that by value
+identity of object can be obtained by calling id()
+None is a special object and there can be only one instance of it. Thus, to compare objects with None Type “is” can be used.
+Python 3 has print statement as function
+dynamic typing in python- x= “abc” x=48(doesn’t need to specify variable type)
+Automatic type promotion:
+x=41(int)
+y=8.5(float)
+x+y
+49.5
+Binding-assigning value to a variable i.e binding names to objects
+Assigning new object to existing variable is called rebinding the name
+When object has no name bound to it, it is scheduled for garbage collection(similar to Java)
+numbers and strings in python are immutable. For example, y=5 y+=1 This will create a new object 6 which y would refer to  and the object 5 would remain unchanged
+Three Integral types-bool, int and long
+If a size of integer exceeds 2^31-1 or -2^31, int is automatically type promoted to long
+Long example- q=7L
+integer literals are assumed to be base 10, except when start with 0x(hexadecimal, base 16) and start with 0(octal. base 8)
+String types-str which hold bytes and unicode which hold characters. 7 bit ASCII>strs and 8-bit byes-unicode. Example- euro=unichr(8364)#prints euro symbol on printing, ord(euro) #converts euro to 8364
+Along with print statement %d, %f and %s can be used. print(“integer %i and float %.1f” 6.389)
+Shorthands for string: For example 
+a=“string” 
+b=a[:2] >>st
+c=a[4:]>>ng 
+e=a[-2:]>>ng#when using - sign the 0th element is /o which is at end of the string
+d=a[2:4]>>ri  #first numbered element is included but the last is not
+len(a)=5
+Tuples is an ordered sequence of zero or more object references(like strings they support sequence functions like len()). They can sliced as shown above. They can be nested too as in names=“Albert”, “Brenda”.”Cecil”
+names[1]>>’Brenda’
+Slicing on tuples will create tuples themselves e.g.. new names=“A”,names[1:]>>”A”, (“Brenda, “Cecil”)
+Lists are different from tuples as they can b modified by functions and are mutable.Example of functions on list
+fruit.insert(4, "Rowan”)>>insert
+del fruit[4]>>delete#del statement is used to remove an item at a particular index position, whereas the remove() method is used to remove an item that matches remove()'s parameter.
+We can force Python to do a deep copy by taking a slice that consists of the entire list:
+For example,macroalgae = seaweed[:]# this will make any changes done in one not reflected in another. This is opposite to the by default shallow copy of mutable data in Python
+Functions on list:
+x in a
+Returns 
+True
+ if item 
+x
+ is in list 
+a
+x not in a
+Returns 
+True
+ if 
+x
+ is not in 
+a
+a + b
+Returns a list containing all the items of list 
+a
+ and of list 
+b
+; the 
+extend()
+ method does the same and
+is more efficient
+len(a)
+Returns the length of 
+a
+a.count(x)
+Returns the number of times 
+x
+ occurs in 
+a
+a.index(x)
+Returns the index position of the leftmost occurrence of 
+x
+ in 
+a
+; raises a 
+ValueError
+ exception if no
+x
+ is found
+a.append(x)
+Appends item 
+x
+ to the end of 
+a
+a.extend(b)
+Appends all 
+b
+'s items to the end of 
+a
+a.insert(i, x)
+Inserts item 
+x
+ into 
+a
+ at index position 
+i
+a.remove(x)
+Removes the leftmost occurrence of 
+x
+ from 
+a
+; raises a 
+ValueError
+ exception if no 
+x
+ is found
+a.pop()
+Returns and removes the rightmost item of 
+a
+a.pop(i)
+Returns and removes the item at index position 
+i
+a.reverse()
+Reverses the list in-place
+a.sort()
+Sorts the list in-place; this method accepts optional arguments such as a comparison function or a
+"key" to facilitate DSU (decorate, sort, undecorate) sorting
+
+The dict type is a data dictionary, also known as an associative array. A dictionary holds
+a set of unordered key–value pairs and provides very fast key lookup. Keys are unique and
+must be of an immutable type, such as a Python string, a number, or a tuple; the value can
+be of any type including collection types, so it is possible to create arbitrarily nested data structures.
+
+
