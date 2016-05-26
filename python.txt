@@ -122,4 +122,69 @@ a set of unordered key–value pairs and provides very fast key lookup. Keys are
 must be of an immutable type, such as a Python string, a number, or a tuple; the value can
 be of any type including collection types, so it is possible to create arbitrarily nested data structures.
 
+Methods and functions on dictionaries:
+x in d
+Returns 
+True
+ if item 
+x
+ is in dictionary d
+x not in d
+Returns 
+True
+ if 
+x is not in d
+len(d)
+Returns the number of items in 
+d
+d.clear()
+Removes all items from 
+d
+d.copy()
+Returns a shallow copy of 
+d
+d.keys()
+Returns a list of all the keys in 
+d
+d.values()
+Returns a list of all the values in 
+d
+d.items()
+Returns a list of tuples of all the (key, value) pairs in 
+d
+d.get(k)
+Returns the value with key 
+k
+, or 
+None
+d.get(k, x)
+Returns the value with key 
+k
+ if 
+k
+ is in 
+d
+; otherwise returns 
+x
+
+Python provides two set types, set and frozenset. Both are unordered, so neither is a
+sequence. Sets are mutable so items can be added and removed. Frozensets are immutable
+and cannot be changed; however, this means that they are suitable for use as dictionary
+keys.
+
+Sets are similar to dictionaries that have only keys and no values.
+
+Conditional Branching:
+if elif
+indentation in if else helps in avoiding dangling else problem in C
+Looping:
+while, while also has else option
+for:range function()- example range(-4,12,3)>>	[-4, -1, 2, 5, 8, 11]
+xrange function>>works more efficiently as it works lazily, not creating all integers in one go.
+Example of for loop:
+presidents = dict(Washington=(1789, 1797), Adams=(1797, 1801),
+                  Jefferson=(1801, 1809), Madison=(1809, 1817))
+for key in presidents:
+    print "%s: %d-%d" % (key, presidents[key][0], presidents[key][1])
+
 
