@@ -179,6 +179,7 @@ if elif
 indentation in if else helps in avoiding dangling else problem in C
 Looping:
 while, while also has else option
+* An optional else clause will only execute if loop is complemeted. If break is called inside loop, else will not be executed.
 for:range function()- example range(-4,12,3)>>	[-4, -1, 2, 5, 8, 11]
 xrange function>>works more efficiently as it works lazily, not creating all integers in one go.
 Example of for loop:
@@ -187,4 +188,57 @@ presidents = dict(Washington=(1789, 1797), Adams=(1797, 1801),
 for key in presidents:
     print "%s: %d-%d" % (key, presidents[key][0], presidents[key][1])
 
+Functions:
+A function's name is an object reference to the function, and like any other object reference it can be assigned to another variable or stored in a data structure.
+“”” is used to document functions
+Properties-
+Python does not permit a parameter without a default argument to follow one that has a default argument; so we could not have frange(start=0, 5)
+Python does not allow overloaded functions
+Comparing with None in Python loops is more efficient than comparing with 0 as None is a global object so comparing using is and is not is very fast.
+Python functions can return any number of values.
 
+Using yield:Generator statements do not have return statements, they have yield instead. and because we have used yield, when loop finishes it does not return a value, but instead raises a StopIteration exception. The for loop handles this exception well and understands that iteration has completed.
+A generator is an object that has a next() function, so we can explore the behavior of our
+frange() generator interactively if we wish:
+>>> list(frange(1, 3, 0.75))
+[1, 1.75, 2.5]
+>>> gen = frange(1, 3, 0.75)
+>>> gen.next()
+1
+
+Python provides a second way of creating functions:
+cube = lambda x: pow(x, 3)
+The lambda keyword is used to create simple anonymous functions. Lambda functions
+cannot contain control structures (no branches or loops), nor do they have a 
+return statement:The value returned is simply whatever the expression evaluates to.
+
+Dynamic Function creation:
+The Python interpreter starts reading from the top of the 
+.py file. When the interpreter encounters a  def statement it executes the statement, thereby instantiating the function and binding the name following the def to it. Any code that is not inside a def statement or class statement is executed directly.
+
+*Python cannot call functions or use objects that have not been defined. So Python programs
+that occupy a single file tend to have a Pascal-like structure with lots of function definitions
+from the top down, and at the end a call to one of them to start the processing off
+*Unlike C++ and Java, Python programs do not have a fixed entry point, and the name
+"main" is not special. The Python interpreter simply executes the code it encounters from
+the first line down
+
+Partial Function Application:
+Storing a function (i.e., an object reference to a function), that we can then call later. A function stored like this is known as a callback.Eg.
+def hello(who):
+    print "Hello", who
+def goodbye(who):
+    print "Goodbye", who
+funclist = [hello, goodbye]
+# Some time later
+for func in funclist:
+    func("Me")
+>>"Hello Me"
+"Goodbye Me"
+
+A solution to this is partial function application(also known as "currying"), which simply
+means that we take a function and zero, one, or more parameters for it, and wrap them up
+into a new function which when invoked will call the original function with the parameters
+we wrapped, and with any others that are passed at call time. Such wrapped functions are
+called closures because they encapsulate some of their calling context when they are
+created.
