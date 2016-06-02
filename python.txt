@@ -242,3 +242,10 @@ into a new function which when invoked will call the original function with the 
 we wrapped, and with any others that are passed at call time. Such wrapped functions are
 called closures because they encapsulate some of their calling context when they are
 created.
+
+import functools
+buttonOneFunc = functools.partial(action, "One”)#action is another function and “One”                would be it’s argument
+buttonTwoFunc = functools.partial(action, "Two")
+
+Exception handling:
+If a handler is found, the interpreter passes control to the handler, and execution continues from there. If, having gone all the way up the call stack to the top-level, no handler is found, the application will terminate and report the exception that was the cause
