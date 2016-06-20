@@ -179,7 +179,7 @@ if elif
 indentation in if else helps in avoiding dangling else problem in C
 Looping:
 while, while also has else option
-* An optional else clause will only execute if loop is complemeted. If break is called inside loop, else will not be executed.
+* An optional else clause will only execute if loop is complemented. If break is called inside loop, else will not be executed.
 for:range function()- example range(-4,12,3)>>	[-4, -1, 2, 5, 8, 11]
 xrange function>>works more efficiently as it works lazily, not creating all integers in one go.
 Example of for loop:
@@ -249,3 +249,15 @@ buttonTwoFunc = functools.partial(action, "Two")
 
 Exception handling:
 If a handler is found, the interpreter passes control to the handler, and execution continues from there. If, having gone all the way up the call stack to the top-level, no handler is found, the application will terminate and report the exception that was the cause
+Syntax-
+try:#suite1 get executed first
+  suite1
+except exceptions:#if an exception occurs control shifts to except statement and if exception match suite 2 is executed
+  suite2
+else:
+  suite3#when no exception occurs suite 3 is executed after suite 1 is finished
+try except finally
+
+Different types of error:
+finally blocks are always executed whether an exception occurs or not, exactly once, either when the try suite is finished, or when an exception is raised that shifts the flow of control outside the try block.
+
