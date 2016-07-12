@@ -261,3 +261,25 @@ try except finally
 Different types of error:
 finally blocks are always executed whether an exception occurs or not, exactly once, either when the try suite is finished, or when an exception is raised that shifts the flow of control outside the try block.
 
+Creating Instances
+objects are created in python in two steps. First they are created and then they are initialized.__new__() constructs object and __init__() method is called to initialize
+
+For deleting objects garbage collection is implemented by calling its special method __del__(). This is rarely used.
+
+Python's property()function can be used to specify a getter, a setter, a deletion method,
+and a doc string
+def _width(self):
+    return self.__width
+def _setWidth(self, width):
+    # Perform some computation
+    self.__width = width
+width = property(fget=_width, fset=_setWidth)
+when we call methods or access instance variables, we must specify the instance using 
+self
+to overload a class's + operator in Python we would implement an __add__() method
+
+Comparing two instances:
+def __cmp__(self, other):
+    return cmp(self.area(), other.area())
+We have used the built-in cmp() function to implement __cmp__(). The cmp()function
+takes two objects and returns -1 if the first is less than the second, 0 if they are equal, and 1 otherwise
